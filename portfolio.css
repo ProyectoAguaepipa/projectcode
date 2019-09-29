@@ -1,4 +1,3 @@
-
 * {
   padding: 0;
   margin: 0;
@@ -6,79 +5,259 @@
 }
 
 body {
-  background: #fbe8a6;
-  color: #000;
+  color: #5d6063;
+  background-color: #eaedf0;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+  line-height: 1.3;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
   grid-template-areas:
     "menu menu menu menu"
     "intro intro intro intro"
     "project project project project"
     "contact contact contact contact"
     "footer footer footer footer";
+  height: 1000px;
+  gap: 10px;
 }
+
 .container > * {
+  padding: 20px;
 }
 
 .container .menu {
-  background: #303c6c;
+  background-color: #255585;
   grid-area: menu;
-  color: #b4dfe5;
+  color: white;
+  display: grid;
+  position: fixed;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.menu .menu-list {
+  align-self: center;
 }
 
 .container .intro {
-  background: #f4976c;
   grid-area: intro;
-  padding-top: 1.05em;
+  display: grid;
+  align-items: center;
+  padding-top: 0px;
+  margin-top: 0px;
+ 
+  height: 100vh;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,auto);
+  grid-template-areas: "nombre nombre"
+                       "desc desc"
+                       "intro-p intro-p"
+                       ;
+                       
+}
+
+.intro .nombre,
+.intro .desc, .intro .intro-p {
+  justify-self: center;
+  align-items: center;
+}
+.nombre{
+  grid-area: nombre;
+  padding-top: 20px;
+}
+.desc{
+  grid-area: desc;
+}
+.intro-p{
+  grid-area: intro-p;
 }
 
 .container .project {
   grid-area: project;
-  background: #b4dfe5;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
   grid-template-areas:
     "tribute tribute"
     "survey survey"
     "product product"
     "docu docu";
+  gap: 20px;
+}
+.container .project > * {
+  background-color: #f6f7f8;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
 }
 
 .container .contact {
   grid-area: contact;
-  background: #d2fdff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "action action action action"
+    "git git linke linke";
+  gap: 20px;
+  background-color: #f6f7f8;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+}
+
+.action {
+  grid-area: action;
+  justify-self: center;
+}
+.git {
+  grid-area: git;
+  justify-self: center;
+}
+.linke {
+  grid-area: linke;
+  justify-self: center;
 }
 
 .container .footer {
   grid-area: footer;
+  display: grid;
+  background-color: #f6f7f8;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  
+}
+
+.footer .footer-p {
+  align-self: center;
+  justify-self: center;
 }
 
 .container .project .tribute {
   grid-area: tribute;
 }
+.container .project .tribute {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "tribute-img tribute-img"
+    "tribute-name tribute-name"
+    "tribute-link tribute-link";
+    gap:10px;
+}
+
+.tribute-img,
+.tribute-name,
+.tribute-link {
+  justify-self: center;
+  text-align: center;
+}
+.tribute-img {
+  grid-area: tribute-img;
+}
+.tribute-name {
+  grid-area: tribute-name;
+}
+.tribute-link {
+  grid-area: tribute-link;
+}
+
+/*Survey*/
+
 .container .project .survey {
   grid-area: survey;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "survey-img survey-img"
+    "survey-name survey-name"
+    "survey-link survey-link";
 }
+
+.survey-img,
+.survey-name,
+.survey-link {
+  justify-self: center;
+  text-align: center;
+}
+.survey-img {
+  grid-area: survey-img;
+}
+.survey-name {
+  grid-area: survey-name;
+}
+.survey-link {
+  grid-area: survey-link;
+}
+/*Product*/
+
 .container .project .product {
   grid-area: product;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "product-img product-img"
+    "product-name product-name"
+    "product-link product-link";
 }
+
+.product-img,
+.product-name,
+.product-link {
+  justify-self: center;
+  text-align: center;
+}
+.product-img {
+  grid-area: product-img;
+}
+.product-name {
+  grid-area: product-name;
+}
+.product-link {
+  grid-area: product-link;
+}
+
+/*docu*/
 .container .project .docu {
   grid-area: docu;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "docu-img docu-img"
+    "docu-name docu-name"
+    "docu-link docu-link";
 }
+
+.docu-img,
+.docu-name,
+.docu-link {
+  justify-self: center;
+  text-align: center;
+}
+.docu-img {
+  grid-area: docu-img;
+}
+.docu-name {
+  grid-area: docu-name;
+}
+.docu-link {
+  grid-area: docu-link;
+}
+
+/**/
 
 .menu-list {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
-  padding: 20px;
 }
 
 .nombre {
@@ -86,6 +265,11 @@ body {
 }
 .desc {
   text-align: center;
+}
+.a {
+  max-width: 100%;
+  display: block;
+  height: 250px;
 }
 
 /* Mobile Styles */
